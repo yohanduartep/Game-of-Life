@@ -1,4 +1,4 @@
---twice the size and much better performance :o
+--twice the size and much better performance :O
 local rows = 50
 local cols = 150
 local grid = {}
