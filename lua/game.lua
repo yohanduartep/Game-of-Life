@@ -1,4 +1,4 @@
-//twice the size and much better performance :o
+--twice the size and much better performance :o
 local rows = 50
 local cols = 150
 local grid = {}
@@ -61,24 +61,11 @@ local function print_grid()
     end
 end
 
-function GET_KEY()
-    local handle = io.popen("stty raw -echo; dd bs=1 count=1 2>/dev/null; stty -raw echo", "r")
-    local key = handle:read(1)
-    handle:close()
-    return key
-end
-
 math.randomseed(os.time())
 initialize_grid()
 
 while true do
     print_grid()
     update_grid()
-
-    local input = io.open("/dev/stdin", "r")
-    input:setvbuf("no")
-    if os.execute("read -t 0.01 -n 1 k && [ \"$k\" = q ]") == true then
-        break
-    end
 end
 
