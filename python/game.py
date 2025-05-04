@@ -1,9 +1,9 @@
-#Slower than C and java, but considerable less "flickerish"
+# Slower than C and java, but considerable less "flickerish"
 import os
 import random
 
 ROWS = 50
-COLS = 185
+COLS = 190
 
 grid = []
 for i in range(ROWS):
@@ -31,6 +31,7 @@ def count_neighbors(x, y):
             count += grid[nx][ny]
     return count
 
+
 def update_grid():
     for i in range(ROWS):
         for j in range(COLS):
@@ -49,6 +50,7 @@ def update_grid():
         for j in range(COLS):
             grid[i][j] = next_grid[i][j]
 
+
 def print_grid():
     os.system("clear")
     for i in range(ROWS):
@@ -60,7 +62,7 @@ def print_grid():
                 line += " "
         print(line)
 
+
 while True:
     print_grid()
     update_grid()
-
